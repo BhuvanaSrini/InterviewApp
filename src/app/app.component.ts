@@ -8,7 +8,7 @@ import { MyNewServiceService } from './my-new-service.service';
 })
 export class AppComponent {
   constructor(private _myService: MyNewServiceService) { }
-//test
+
   public TotalExperience:any[];
   public RelevantExperience:any[];
   public selectedTotalExp;
