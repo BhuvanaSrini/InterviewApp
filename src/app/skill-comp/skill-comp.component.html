@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Subject or Skill</th>
+        <th>Skill Label</th>
+         <th>No of Questions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let sb of Subject" >
+        <td><input type="checkbox" [(ngModel)]="sb.selected"  /></td>
+        <td>{{sb.name}}</td>
+        <td><select  class="form-control"  [(ngModel)]="sb.severity" >   <option *ngFor="let sv of Severity"  [ngValue]="sv"  >{{sv.name}}</option>
+        </select></td>
+         <td><select  class="form-control"  [(ngModel)]="sb.count"  (ngModelChange)="onChange($event)" >   <option *ngFor="let qc of QuestionCount"  [ngValue]="qc"  >{{qc.name}}</option>
+        </select></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+<div class="container">
+  <button type="submit" (click)="onClick()">Submit</button>
+</div>

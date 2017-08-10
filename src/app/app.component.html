@@ -1,3 +1,32 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+ 
+<h2>INTERVIEW PANEL <small class="pull-right">{{ TodayDate | date }}  
+  </small></h2>
+
+
+<div class="row">
+   <div class="col-md-2">Bhuvaneswari Srinivasan</div>
+    <div class="col-md-4"><select [(ngModel)]="selectedRoles" (ngModelChange)="onChange($event)" class="form-control" required  >   <option *ngFor="let role of Roles"  [ngValue]="role"  >{{role.name}}</option>
+        </select></div>
+  <div class="pull-right">Candidate</div>
+  </div>
+    
+    <div class="row">
+   <div class="col-md-2">Bhuvaneswari Srinivasan</div>
+    <div class="col-md-3">Total Experience:<select  class="form-control" required [(ngModel)]="selectedTotalExp" (ngModelChange)="onChange($event)"  >   <option   *ngFor="let exp of TotalExperience"  [ngValue]="exp"  >{{exp.name}}</option>
+        </select></div>
+  <div class="col-md-4">Relevant Experience:<select  class="form-control" required [(ngModel)]="selectedRelevantExp" (ngModelChange)="onChange($event)"  >   <option *ngFor="let exp of RelevantExperience"  [ngValue]="exp"  >{{exp.name}}</option>
+        </select></div>
+  <div class="pull-right">CAND1234</div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<footer class="footer "><div class="container">
+<div class="row">
+  
+   <div style="text-align: center">Copyright</div>
+  </div>
+    </div>
+  </footer>

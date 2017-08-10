@@ -1,0 +1,31 @@
+
+            <div class="container"  ><h1>{{finalResult}}</h1></div>
+    <main>
+
+        <section id="with-container-example"  *ngFor="let res of result">
+          
+            <div class="container" >
+               
+                <div class="row" [ngStyle]="{'background': res.score > 50 ? '#eef7ee' :'#f7dcdb' }">
+               
+                    <div class="col-xs-8"  style="height:50px">
+                       {{res.subject}}
+                    </div>
+                     <div class="col-xs-8"  style="height:50px">
+                       {{res.score| number : '1.2-2'}}
+                    </div>
+                       <div class="col-xs-8"  style="height:50px">
+                       <a  (click)="onClick(res)"><p>{{res.Label}}</p></a>
+                    </div>
+                </div>
+            </div>
+        <div class="container"  *ngFor="let resD of resultDetail"  [style.display]="res.showDetail?'none':'inherit'" >
+                   <div class="row"  [ngStyle]="{'background': resD.Correct==true ? '#eef7ee' :'#f7dcdb' }">
+                    <div class="col-xs-8"  style="height:50px">
+                       {{resD.Question}}
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+    </main>
