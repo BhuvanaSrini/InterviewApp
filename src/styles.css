@@ -1,23 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.container {
-    height: auto;
-}
 
-.footer {
-    display: table-row;
-    height: 1px;
-}
 
 .panel-default {
 background: #f9f9f9}
-
-.container {
-   padding-right: 0px;
-   padding-left: 0px;
-     padding-bottom: 15px;
-   margin-right: auto;
-   margin-left: auto;
-   max-width: 900px;
-   overflow:hidden;
-   min-height:15px !important;
-}

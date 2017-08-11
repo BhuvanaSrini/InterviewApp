@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyNewServiceService } from '../my-new-service.service';
-
+import $ from "jquery";
 @Component({
   selector: 'app-result-comp',
   templateUrl: './result-comp.component.html',
@@ -8,7 +8,7 @@ import { MyNewServiceService } from '../my-new-service.service';
 })
 export class ResultCompComponent implements OnInit {
 public result:any;
-public resultDetail;
+public resultDetail:any;
 public showLabel:string;
 public showResultDetail:boolean=true;
 public finalResult;
@@ -18,7 +18,9 @@ public finalResult;
 
   onClick(item): void {
     debugger
+    
     this._myService.removeShowDetail(item.id);
+     this.resultDetail=this._myService.getResultDetail(item.id);
    if (item.showDetail==false){
    item.showDetail=true;
     item.Label="Show Detail";
@@ -27,8 +29,9 @@ public finalResult;
    
        item.showDetail=false;
      item.Label="Hide Detail";
-     this.resultDetail=this._myService.getResultDetail(item.id);
+    
   }
+    $('#myModal').modal('show');
   }
   ngOnInit() {
   debugger

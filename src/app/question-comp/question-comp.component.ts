@@ -14,12 +14,11 @@ public question:any;
 public AnsYes:string;
 public result :boolean;
 public remarks :string;
+public Name:string;
 
 
 constructor(private _myService: MyNewServiceService,private router:Router) { }
  onClick(): void {
-debugger
-
   if (this.AnsYes=="true")
     this.result=true;
     if (this.AnsYes =="false")
@@ -30,6 +29,7 @@ debugger
     {
       this.AnsYes=null;
     this.question=this._myService.getQuestions()
+      this.Name=this._myService.getTypeName(this.question.type);
     }
     else
   this.router.navigateByUrl('/result')
@@ -40,9 +40,9 @@ debugger
 
 }
   ngOnInit() {
-    debugger
-    this._myService.getAllQuestions();
+     this._myService.getAllQuestions();
       this.question=this._myService.getQuestions();
+      this.Name=this._myService.getTypeName(this.question.type);
    //   this._myService.setQuestions(true,"test");
     //  this.question=this._myService.getQuestions();
     //  this.remarks=this.question.Remarks;

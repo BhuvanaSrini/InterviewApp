@@ -212,4 +212,8 @@ public setProfile(profile:any){
     public setSubject(subject) {
     return this.Subject=subject;
   }
+  public getTypeName(type:string){
+var temp1 =this.Subject.filter(x => x.id==type);
+     return temp1[0].name;
+  }
 }
