@@ -23,11 +23,11 @@ export class AppComponent {
   this.profile=this._myService.getProfile();
   this.profile.name='ll';
    if(this.selectedRoles!=undefined)
-  this.profile.Role=this.selectedRoles.id;
+  this._myService.Profile[0].Role=this.selectedRoles.id;
   if(this.selectedTotalExp!=undefined)
-  this.profile.TotalExperience=this.selectedTotalExp.id;
+ this._myService.Profile[0].TotalExperience=this.selectedTotalExp.id;
   if(this.selectedRelevantExp!=undefined)
-  this.profile.RelevantExp=this.selectedRelevantExp.id;
+ this._myService.Profile[0].RelevantExp=this.selectedRelevantExp.id;
   this._myService.setProfile(this.profile);
    }
 

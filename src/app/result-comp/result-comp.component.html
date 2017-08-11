@@ -1,8 +1,8 @@
-<h1>{{finalResult}}</h1>
+<h1 [ngStyle]="{'color':finalResult=='PASS' ? 'green' :'red' }">{{finalResult}}</h1>
 <div *ngFor="let res of result">
     <div class="alert" [ngStyle]="{'background': res.score>50 ? '#eef7ee' :'#f7dcdb' }" role="alert">
         
-        <p>{{res.subject}}</p>
+        <h3>{{res.subject}}</h3>
         <p class="lead">{{res.score| number : '1.2-2'}}</p>
         <a (click)="onClick(res)" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >{{res.Label}}</a>
     </div>

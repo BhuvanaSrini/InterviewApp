@@ -7,7 +7,7 @@ import 'rxjs/Rx';
 export class MyNewServiceService {
 
 constructor() { }
-public Profile=[{Name:'Bhuvaneswari',Role:'1',TotalExperience:'1',RelevantExp:'1',CandID:'cad'}];
+public Profile=[{Name:'Bhuvaneswari',Role:'0',TotalExperience:'0',RelevantExp:'0',CandID:'cad'}];
 public counter=0;
 public finalResult='Pass';
  public Subject=[

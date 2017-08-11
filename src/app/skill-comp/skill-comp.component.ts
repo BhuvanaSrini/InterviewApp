@@ -22,13 +22,20 @@ public QuestionCount:any[];
  onClick(): void {
    debugger
    var sub=this.Subject.filter(x => x.count.name!==0);
-   if (sub.length>0)
+   if (this._myService.Profile[0].RelevantExp!='0' && this._myService.Profile[0].RelevantExp!='0' && this._myService.Profile[0].RelevantExp!='0')
     {
-  this._myService.setSubject(this.Subject);
-  this.router.navigateByUrl('/question')
+      if (sub.length>0)
+    {
+     this._myService.setSubject(this.Subject);
+     this.router.navigateByUrl('/question')
     }
     else
       alert("Question count is required");
+    }
+  else
+    {
+      alert("Dropdown selection is required");
+    }
 }
 ngOnInit() {
      this.Subject=this._myService.Subject;
